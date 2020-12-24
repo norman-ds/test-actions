@@ -29,10 +29,8 @@ jobs:
         uses: actions/checkout@v2
         
       # Runing R script will expose return value on 
-      # the ${{ steps.fitdata.outputs.fitdata }} variable.
-      # (just to see what happens)
-      - name: Download data
-        run: Rscript -e 'opendata.R'
+      - name: Download metadata
+        run: Rscript opendata.R
         working-directory: ${{ env.working-directory }}
 
       # Checking the status will expose the status on 
