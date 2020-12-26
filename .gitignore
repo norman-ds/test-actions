@@ -1,3 +1,17 @@
+# Blogdown file
+blogdown
+public
+_book
+bin
+
+# Workspace
+.rstudio
+testdata
+
+# File handler
+.DS_Store
+Thumbs.db
+
 # History files
 .Rhistory
 .Rapp.history
