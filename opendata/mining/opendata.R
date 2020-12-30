@@ -37,7 +37,7 @@ pdown <- function(id) {
     mydown <- TRUE
   } 
   
-  # next download
+  # further downloads
   else {
     tmp <- tempfile(id)
     curl::curl_download(myurl, tmp)
@@ -50,7 +50,7 @@ pdown <- function(id) {
       myfile <- file.path(newdir, id)
       
       file.copy(tmp, myfile)
-      file.copy(myfile, lastfile)
+      file.copy(tmp, lastfile)
       cat(paste(id, 'downloaded\n'))
       mydown <- TRUE
     } else {
