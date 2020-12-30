@@ -14,15 +14,16 @@ stopifnot(openlist$success)
 pivot.slug <- "todesf.*lle.*alter.*kanton.*csv"
 (idlist <- openlist$result[grepl(pivot.slug, openlist$result)])
 
-# 'data' must be present as a local directory
-if (!dir.exists('data')) dir.create('data')
+# 'dirscrap' must be present as a local directory
+dirscrap <- 'scrap'
+if (!dir.exists(dirscrap)) dir.create(dirscrap)
 
 # download datasets (metadata and urls) by id (slug)
 pdown <- function(id) {
   mydown <- FALSE
   myurl <- paste0("https://opendata.swiss/api/3/action/package_show",'?id=', id)
-  lastfile <- file.path('data', id)
-  newdir <- file.path('data', Sys.Date())
+  lastfile <- file.path(dirscrap, id)
+  newdir <- file.path(dirscrap, Sys.Date())
   
 
   # download the first time 

@@ -11,7 +11,7 @@ fun_fromjson <- function(f1) {
                test = identical(jsonlite::fromJSON(f1), jsonlite::fromJSON(.x)))))
 }
 
-(myfiles <- list.files("data", pattern = 'datei33', full.names = T, recursive = T))
+(myfiles <- list.files("scrap", pattern = 'datei33', full.names = T, recursive = T))
 
 purrr::map(myfiles, fun_all.equal)
 purrr::map(myfiles, fun_fromjson)

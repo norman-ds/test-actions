@@ -4,7 +4,7 @@ library(dplyr)
 # library(jsonlite::fromJSON)
 
 myid <- 'todesfalle-nach-funf-jahres-altersgruppe-geschlecht-woche-und-kanton-csv-datei33'
-myfile <- file.path('data', '2020-12-24', myid)
+myfile <- file.path('scrap', '2020-12-24', myid)
 
 # shows one dataset by id (slug)
 pshow <- function(id) {
