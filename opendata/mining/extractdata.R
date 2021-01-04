@@ -4,10 +4,15 @@ source('digdata.R')
 source('fileread.R')
 source('extract_mrw.R')
 
-myid <- 'todesfalle-nach-funf-jahres-altersgruppe-geschlecht-woche-und-kanton-csv-datei33'
+myid <- 'todesfalle-nach-funf-jahres-altersgruppe-geschlecht-woche-und-kanton-csv-datei34'
 myfile <- file.path('scrap',  myid)
 
-tmp <- tempfile()
+download_csv <- function(jfile) {
+  jfile$resources$download_url[jfile$resources$format=='CSV']
+}
+
+tmp <- 'tmpdata.csv'
+if (file.exists(tmp)) unlink(tmp)
 
 myfile %>%
   digdata() %>%
