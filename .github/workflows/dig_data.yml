@@ -49,5 +49,4 @@ jobs:
           name: GitHub Action Download
           email: normandev@puntaminar.ch
           commit-message: 'Store the most recent weeks data'
-'
 
