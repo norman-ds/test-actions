@@ -4,9 +4,6 @@ name: Dig data
 
 # Controls when the action will run. Triggers the workflow whenever 
 on:
-  push:
-    branches:
-      - main
   schedule: # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
     - cron:  '0 6 * * *' # run every day morning at 6:00 am
 
