@@ -1,0 +1,25 @@
+--- 
+dateformat : "%Y-%m-%dT%H:%M:%S"
+
+# Download
+net:
+ path : net1
+ format : json
+ urlPackagelist : https://opendata.swiss/api/3/action/package_list
+ pattern : "todesf.*lle.*alter.*kanton.*csv"
+ urlPackage : https://opendata.swiss/api/3/action/package_show
+ datafile : deathdata.csv
+ 
+# Build data
+build:
+ path : build1
+ geofilter : [CH, CH011, CH021, CH040, CH070]
+ releasefile : releasefile.csv
+ releaseweeks : 2
+ 
+test:
+  path: test
+  test1:
+    path: test1
+    testfile: testfile.txt
+
