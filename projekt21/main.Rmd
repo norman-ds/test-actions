@@ -14,20 +14,31 @@ library(readr)
 #knitr::opts_knit$set(root.dir='.')
 ```
 
-Row 
+Row {data-height=400}
 ---------------------------------------------------
-### Zeitreihe 2000 bis 2020
 
 ```{r, child='content/timeseries.Rmd'}
 ```
 
 
-Row {.tabset .tabset-fade}
+Row {data-height=40}
 ---------------------------------------------------
 
-### Todesfälle Schweiz (Sample)
+>Badges
+
+
+Row {data-height=560 .tabset .tabset-fade}
+---------------------------------------------------
+
+```{r, child='content/firstrelease.Rmd'}
+```
+
 
 ```{r, child='content/tablepreview.Rmd'}
+```
+
+
+```{r, child='content/information.Rmd'}
 ```
 
 

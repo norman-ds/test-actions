@@ -1,3 +1,5 @@
+### Zeitreihe 2000 bis 2020
+
 ```{r graph}
 # read data with dyfun and convert to timeseries
 dft1 <- dyfun(quos(geo %in% config_all$data$geofilter))  %>%

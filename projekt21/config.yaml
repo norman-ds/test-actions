@@ -26,6 +26,7 @@ static:
  earlydata : "ts-q-01.04.02.01.30.csv"
  metadata : "ts-q-01.04.02.01.30-APPENDIX.xlsx"
  refdatageo : "grossregionCH.csv"
+ imagerelease : "firstrelease.png"
 
 # Content
 content:
