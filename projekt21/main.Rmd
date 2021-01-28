@@ -1,0 +1,34 @@
+---
+title: "Mortalitätsmonitoring Schweiz"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    social: menu
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(dygraphs) # needs xts
+library(dplyr)
+library(readr)
+#knitr::opts_knit$set(root.dir='.')
+```
+
+Row 
+---------------------------------------------------
+### Zeitreihe 2000 bis 2020
+
+```{r, child='content/timeseries.Rmd'}
+```
+
+
+Row {.tabset .tabset-fade}
+---------------------------------------------------
+
+### Todesfälle Schweiz (Sample)
+
+```{r, child='content/tablepreview.Rmd'}
+```
+
+
+

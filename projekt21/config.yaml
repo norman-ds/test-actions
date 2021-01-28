@@ -1,5 +1,9 @@
 --- 
 dateformat : "%Y-%m-%dT%H:%M:%S"
+geofilter : [CH, CH011, CH021, CH040, CH070]
+outputpath : public
+mainfile : main.Rmd
+
 
 # Download
 net:
@@ -13,9 +17,24 @@ net:
 # Build data
 build:
  path : build1
- geofilter : [CH, CH011, CH021, CH040, CH070]
  releasefile : releasefile.csv
  releaseweeks : 2
+ 
+# Static data
+static:
+ path : static
+ earlydata : "ts-q-01.04.02.01.30.csv"
+ metadata : "ts-q-01.04.02.01.30-APPENDIX.xlsx"
+ refdatageo : "grossregionCH.csv"
+
+# Content
+content:
+ path : content
+
+# Public
+public:
+ path : public
+ 
  
 test:
   path: test

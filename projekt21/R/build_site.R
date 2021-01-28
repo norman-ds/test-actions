@@ -3,14 +3,18 @@ library(tidyverse)
 build_site <- function() {
   source('R/net.R', local = T)
   source('R/build.R', local = T)
+  source('R/content.R', local = T)
   
   config_all <- build_config()
   
   config <- config_all$data$net
-  build_net()
+  #build_net()
   
   config <- config_all$data$build
-  build_build()
+  #build_build()
+  
+  config <- config_all$data$content
+  build_content()
 }
 
 build_config <- function() {
@@ -24,8 +28,8 @@ build_config <- function() {
   
   # get filename full path
   getfile <- function(configname) {
-    c <- as.relistable(config)
-    c <- unlist(c)
+#    c <- unlist(as.relistable(config))
+    c <- unlist(config)
     tmpnams <- names(c)[grep(configname, names(c))] # location of configname
     tmpkeys <- unlist(strsplit(tmpnams,'[.]')) # delete keys after configname
     
@@ -33,6 +37,7 @@ build_config <- function() {
     if (length(tmpkeys)>2) warning("File in config.yaml not on level 2")
 
     file.path(config[[tmpkeys[1]]][['path']], c[tmpnams])
+    
   }
   
   list(data=config, filepath=getfile)
@@ -41,3 +46,4 @@ build_config <- function() {
 writedate <- function() {
   format(Sys.time(), yaml::read_yaml('config.yaml')$dateformat)
 }
+build_site()
