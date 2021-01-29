@@ -11,6 +11,8 @@ output:
 library(dygraphs) # needs xts
 library(dplyr)
 library(readr)
+source(config_all$filepath("badgescript"))
+
 #knitr::opts_knit$set(root.dir='.')
 ```
 
@@ -24,7 +26,7 @@ Row {data-height=400}
 Row {data-height=40}
 ---------------------------------------------------
 
->Badges
+`r badge`
 
 
 Row {data-height=560 .tabset .tabset-fade}
@@ -42,4 +44,6 @@ Row {data-height=560 .tabset .tabset-fade}
 ```
 
 
+```{r, child='content/restful.Rmd'}
+```
 

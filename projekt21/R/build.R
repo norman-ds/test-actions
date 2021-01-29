@@ -28,6 +28,12 @@ build_build <- function() {
     filter(GEO %in% config_all$data$geofilter) %>%
     group_by(file) %>%
     summarise(min = min(TIME_PERIOD), max = max(TIME_PERIOD))
+ 
+  ##########################
+  # build rest file
+  source('R/opendatajsonwrapper.R', local = T)
+  source('R/restful.R', local = T)
+  source('R/createrest.R', local = T)
   
   message("... build completed ...")
   

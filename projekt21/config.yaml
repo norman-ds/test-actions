@@ -19,7 +19,9 @@ build:
  path : build1
  releasefile : releasefile.csv
  releaseweeks : 2
- 
+ badgescript : badgelinks.R
+ restfile : json.json
+
 # Static data
 static:
  path : static
