@@ -45,6 +45,10 @@ Row {data-height=560 .tabset .tabset-fade}
 ```
 
 
+```{r, child='content/eventlog.Rmd'}
+```
+
+
 ```{r, child='content/restful.Rmd'}
 ```
 

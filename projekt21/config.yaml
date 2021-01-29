@@ -29,6 +29,7 @@ static:
  metadata : "ts-q-01.04.02.01.30-APPENDIX.xlsx"
  refdatageo : "grossregionCH.csv"
  imagerelease : "firstrelease.png"
+ eventfile : "eventlog.csv"
 
 # Content
 content:

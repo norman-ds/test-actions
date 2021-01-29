@@ -1,0 +1,8 @@
+### Eventlog
+
+
+```{r eventlog}
+config_all$filepath('eventfile') %>% 
+  read_csv() %>%
+  knitr::kable()
+```
