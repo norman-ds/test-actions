@@ -1,1 +1,1 @@
->Badges !!!
+![Run download](https://github.com/norman-ds/momo/workflows/Run%20download/badge.svg) ![Deploy dashboard](https://github.com/norman-ds/momo/workflows/Deploy%20dashboard/badge.svg) ![Last_pull](https://img.shields.io/badge/Last_pull-2021--01--13-blue) ![Valdidate](https://img.shields.io/badge/Valdidate-2021--01--13-blue)
