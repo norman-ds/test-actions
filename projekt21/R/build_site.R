@@ -1,4 +1,5 @@
 library(tidyverse)
+library(jsonlite)
 
 build_site <- function() {
   source('R/net.R', local = T)
@@ -6,10 +7,11 @@ build_site <- function() {
   source('R/content.R', local = T)
   
   config_all <- build_config()
+  anybox <- ranybox(start=writedate())
   
   config <- config_all$data$net
-  #build_net()
-  
+  build_net()
+
   config <- config_all$data$build
   #build_build()
   
@@ -46,4 +48,21 @@ build_config <- function() {
 writedate <- function() {
   format(Sys.time(), yaml::read_yaml('config.yaml')$dateformat)
 }
+
+ranybox <- function(...) {
+  
+  mylist <- list(...)
+  
+  get <- function() {
+    mylist
+  }
+  
+  add <- function(...) {
+    #mylist <<- list(...)
+    mylist <<- append(mylist, list(...))
+  }
+  
+  return(list(get=get, add=add))
+}
+
 build_site()

@@ -11,7 +11,6 @@ output:
 library(dygraphs) # needs xts
 library(dplyr)
 library(readr)
-#source(config_all$filepath("badgescript"))
 
 #knitr::opts_knit$set(root.dir='.')
 ```
@@ -19,36 +18,36 @@ library(readr)
 Row {data-height=400}
 ---------------------------------------------------
 
-```{r, child='content/timeseries.Rmd'}
+```{r timeline, child='content/timeseries.Rmd'}
 ```
 
 
 Row {data-height=40}
 ---------------------------------------------------
 
-```{r, child='content/badges.Rmd'}
+![Run download](https://github.com/norman-ds/momo/workflows/Run%20download/badge.svg) ![Deploy dashboard](https://github.com/norman-ds/momo/workflows/Deploy%20dashboard/badge.svg)
+```{r badge, child='content/badges.Rmd', results='asis'}
 ```
-
 
 Row {data-height=560 .tabset .tabset-fade}
 ---------------------------------------------------
 
-```{r, child='content/firstrelease.Rmd'}
+```{r release, child='content/firstrelease.Rmd'}
 ```
 
 
-```{r, child='content/tablepreview.Rmd'}
+```{r data, child='content/tablepreview.Rmd'}
 ```
 
 
-```{r, child='content/information.Rmd'}
+```{r info, child='content/information.Rmd'}
 ```
 
 
-```{r, child='content/eventlog.Rmd'}
+```{r event, child='content/eventlog.Rmd'}
 ```
 
 
-```{r, child='content/restful.Rmd'}
+```{r rest, child='content/restful.Rmd'}
 ```
 

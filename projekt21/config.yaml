@@ -16,10 +16,9 @@ net:
  
 # Build data
 build:
- path : build1
+ path : build
  releasefile : releasefile.csv
  releaseweeks : 2
- badgescript : badgelinks.R
  restfile : json.json
 
 # Static data

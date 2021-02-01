@@ -24,5 +24,5 @@ pdown <- function(id) {
   return(id)
 }
 
-lapply(idlist, pdown)
+anybox$add(json=unlist(lapply(idlist, pdown)))
 

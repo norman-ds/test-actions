@@ -1,1 +1,14 @@
-![Run download](https://github.com/norman-ds/momo/workflows/Run%20download/badge.svg) ![Deploy dashboard](https://github.com/norman-ds/momo/workflows/Deploy%20dashboard/badge.svg) ![Last_pull](https://img.shields.io/badge/Last_pull-2021--01--13-blue) ![Valdidate](https://img.shields.io/badge/Valdidate-2021--01--13-blue)
+
+```{r}
+source("R/badge.R", local = T)
+
+status <- ''
+if ('json'%in% names(anybox$get())) {
+  if (length(anybox$get()$json)==3) status <- 'I'
+  else status <- 'W'
+} else status <- 'E'
+
+cat(badge('Last download', format(Sys.time(), '%Y-%b-%d'), status))
+cat(badge('Hallo Velo', format(Sys.time(), '%Y-%b-%d'), 'W'))
+```
+
