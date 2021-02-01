@@ -11,6 +11,9 @@ df_files <- list.files(path = config$path,
                        pattern = config$pattern, all.files = T, full.names = T, recursive = F, no.. = T) %>%
   purrr::map_dfr(function(x){df <- jwrapper(x) %>% pivotfile; df$file=x; df}) 
 
+# save validate state of urls
+anybox$add(validate = RCurl::url.exists(df_files$url))
+
 # function of find url of the most recent week
 file_of_mrw <- function(data, unique_url = TRUE ) {
   df_red <- data %>%
@@ -26,7 +29,8 @@ file_of_mrw <- function(data, unique_url = TRUE ) {
 }
 
 # download data
-newfile <- file.path(config$path, config$datafile)
+#newfile <- file.path(config$path, config$datafile)
+newfile <- config_all$filepath("datafile")  
 if (file.exists(newfile)) unlink(newfile)
 
 df_files %>%

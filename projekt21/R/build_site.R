@@ -13,10 +13,11 @@ build_site <- function() {
   build_net()
 
   config <- config_all$data$build
-  #build_build()
+  build_build()
   
   config <- config_all$data$content
   build_content()
+  anybox$get()
 }
 
 build_config <- function() {
