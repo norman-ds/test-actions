@@ -21,7 +21,8 @@ build_site <- function() {
   
   config <- config_all$data$content
   build_content()
-  anybox$get()
+  
+  invisible(anybox$get())
 }
 
 build_config <- function() {
@@ -67,7 +68,7 @@ ranybox <- function(...) {
     mylist <<- append(mylist, list(...))
   }
   
-  invisible(list(get=get, add=add))
+  return(list(get=get, add=add))
 }
 
 build_site()

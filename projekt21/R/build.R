@@ -8,15 +8,23 @@ build_build <- function() {
   
   ##########################
   # build firstrelease.csv
-  release <- config_all$filepath('releasefile')
+  releasefile <- config_all$filepath('releasefile')
+  releasedata <- read_csv(releasefile) %>% 
+    select(TIME_PERIOD, GEO, VALUE) %>%
+    distinct() 
   
-  # Vector of gegrafic regions 
-  datafile %>% 
-    extract_mrw(config_all$data$geofilter, config$releaseweeks) %>%
-    add_column(DOWNLOAD = writedate(), .before = 1) %>%
-    write_csv(release, append = file.exists(release))
   
-  stopifnot(file.exists(release))
+  # dataframe of most recent week
+  dfmrw <- datafile %>% 
+    extract_mrw(config_all$data$geofilter, config$releaseweeks) 
+  
+  if (nrow(anti_join(dfmrw, releasedata, by=c('TIME_PERIOD','GEO','VALUE')))>0) {
+    dfmrw %>%
+      add_column(DOWNLOAD = writedate(), .before = 1) %>%
+      write_csv(releasefile, append = file.exists(releasefile))
+  }
+  
+  stopifnot(file.exists(releasefile))
   
   ##########################
   # build timeserie
