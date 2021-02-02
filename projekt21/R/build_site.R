@@ -67,7 +67,8 @@ ranybox <- function(...) {
     mylist <<- append(mylist, list(...))
   }
   
-  return(list(get=get, add=add))
+  invisible(list(get=get, add=add))
 }
 
 build_site()
+
