@@ -33,6 +33,8 @@ jobs:
         run: Rscript -e 'install.packages("flexdashboard")'
       - name: Install Dygraphs
         run: Rscript -e 'install.packages("dygraphs")'
+      - name: Install Curl
+        run: Rscript -e 'install.packages("RCurl")'
 
       # Runing R script will expose return value on 
       - name: Create Project21
