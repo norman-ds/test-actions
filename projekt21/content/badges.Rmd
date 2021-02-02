@@ -13,7 +13,7 @@ status1 <- function() {
 status2 <- function() {
   status <- ''
   if ('validate'%in% names(anybox$get())) {
-    if (all(anybox$get()$validate==rep(T,3))) status <- 'I'
+    if (all(anybox$get()$validate)) status <- 'I'
     else status <- 'W'
   } else status <- 'E'
   return(status)

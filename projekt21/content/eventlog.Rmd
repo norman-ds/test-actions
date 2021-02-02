@@ -2,7 +2,8 @@
 
 
 ```{r eventlog}
-config_all$filepath('eventfile') %>% 
+config_all$filepath('eventsfile') %>% 
   read_csv() %>%
+  arrange(desc(timestamp)) %>%
   knitr::kable()
 ```

@@ -7,7 +7,7 @@ mainfile : main.Rmd
 
 # Download
 net:
- path : net1
+ path : net
  format : json
  urlPackagelist : https://opendata.swiss/api/3/action/package_list
  pattern : "todesf.*lle.*alter.*kanton.*csv"
@@ -28,7 +28,7 @@ static:
  metadata : "ts-q-01.04.02.01.30-APPENDIX.xlsx"
  refdatageo : "grossregionCH.csv"
  imagerelease : "firstrelease.png"
- eventfile : "eventlog.csv"
+ staticlog : "eventlog.csv"
 
 # Content
 content:
@@ -38,10 +38,8 @@ content:
 public:
  path : public
  
- 
-test:
-  path: test
-  test1:
-    path: test1
-    testfile: testfile.txt
+# Event
+events:
+ path : events
+ eventsfile : "eventlog.csv"
 

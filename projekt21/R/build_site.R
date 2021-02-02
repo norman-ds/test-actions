@@ -4,6 +4,7 @@ library(jsonlite)
 build_site <- function() {
   source('R/net.R', local = T)
   source('R/build.R', local = T)
+  source('R/events.R', local = T)
   source('R/content.R', local = T)
   
   config_all <- build_config()
@@ -14,6 +15,9 @@ build_site <- function() {
 
   config <- config_all$data$build
   build_build()
+  
+  config <- config_all$data$events
+  build_events()
   
   config <- config_all$data$content
   build_content()
@@ -46,8 +50,8 @@ build_config <- function() {
   list(data=config, filepath=getfile)
 }
 
-writedate <- function() {
-  format(Sys.time(), yaml::read_yaml('config.yaml')$dateformat)
+writedate <- function(datetime=Sys.time()) {
+  format(datetime, yaml::read_yaml('config.yaml')$dateformat)
 }
 
 ranybox <- function(...) {
