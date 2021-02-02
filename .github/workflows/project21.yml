@@ -21,13 +21,19 @@ jobs:
     timeout-minutes: 10
     
     env:
-      working-directory: ./project21
+      working-directory: ./projekt21
     
     steps:
       # Checkout GitHub 'master'
       - name: Checkout repo
         uses: actions/checkout@v2
         
+      # Install R packages
+      - name: Install Flexdashboard
+        run: Rscript -e 'install.packages("flexdashboard")'
+      - name: Install Dygraphs
+        run: Rscript -e 'install.packages("dygraphs")'
+
       # Runing R script will expose return value on 
       - name: Create Project21
         run: Rscript ./R/build_site.R
