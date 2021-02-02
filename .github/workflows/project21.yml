@@ -1,6 +1,6 @@
 # This is a basic workflow to download data
 
-name: Gold mining
+name: project21
 
 # Controls when the action will run. Triggers the workflow whenever 
 on:
