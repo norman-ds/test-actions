@@ -5,6 +5,7 @@ build_site <- function() {
   source('R/net.R', local = T)
   source('R/build.R', local = T)
   source('R/events.R', local = T)
+  source('R/restapi.R', local = T)
   source('R/content.R', local = T)
   
   config_all <- build_config()
@@ -19,9 +20,16 @@ build_site <- function() {
   config <- config_all$data$events
   build_events()
   
-  config <- config_all$data$content
-  build_content()
+  config <- config_all$data$restapi
+  build_restapi()
   
+  config <- config_all$data$content
+  public <- build_config()$tmpdir()
+  public$add('rest/json.json')
+  public$add('events/eventlog.csv')
+  build_content(public$path)
+  public$dopublic()
+
   invisible(anybox$get())
 }
 
@@ -48,7 +56,29 @@ build_config <- function() {
     
   }
   
-  list(data=config, filepath=getfile)
+  tmpdir <- function() {
+    tmpdir <- config$tmpdir
+    oudir <- config$outputpath
+    
+    if (dir.exists(tmpdir)) unlink(tmpdir, T, T)
+    dir.create(tmpdir)
+    
+    add <- function(from, ...) {
+      file.copy(from=from, to=tmpdir, ...)
+    }
+    
+    dopublic <- function() {
+      if (!dir.exists(oudir)) dir.create(oudir)
+      
+      list.files(tmpdir, full.names = T, recursive = T) %>%
+        lapply(file.copy, to=oudir, recursive = T)
+      unlink(tmpdir, T, T)
+    }
+    
+    return(list(path = tmpdir, add = add, dopublic = dopublic))
+  }
+  
+  list(data=config, filepath=getfile, tmpdir=tmpdir)
 }
 
 writedate <- function(datetime=Sys.time()) {

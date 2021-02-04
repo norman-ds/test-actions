@@ -12,7 +12,8 @@ df_files <- list.files(path = config$path,
   purrr::map_dfr(function(x){df <- jwrapper(x) %>% pivotfile; df$file=x; df}) 
 
 # save validate state of urls
-anybox$add(validate = RCurl::url.exists(df_files$url))
+df_files$urlexist <- RCurl::url.exists(df_files$url)
+anybox$add(validate = df_files)
 
 # function of find url of the most recent week
 file_of_mrw <- function(data, unique_url = TRUE ) {

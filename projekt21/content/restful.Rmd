@@ -1,11 +1,11 @@
-### Zusätzliche Informationen
+### Download
 
 Metadatenzugriff [API (JSON)](https://norman-ds.github.io/momo/json.json) 
 
 ***
 
 ```{r, results='asis'}
-source('R/berestful.R')
+source('R/berestful.R', local = T)
 berestful(config_all$filepath('restfile')) %>% cat
 ```
 

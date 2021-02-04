@@ -8,7 +8,6 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-library(dygraphs) # needs xts
 library(dplyr)
 library(readr)
 

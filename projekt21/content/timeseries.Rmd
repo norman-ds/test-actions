@@ -1,7 +1,10 @@
 ### Zeitreihe 2000 bis 2020
 
 ```{r graph}
+library(dygraphs) # needs xts
+
 # read data with dyfun and convert to timeseries
+source('R/momodyfun.R', local = T)
 dft1 <- dyfun(quos(geo %in% config_all$data$geofilter))  %>%
     count(kt,date, wt=value, name='value') %>%
     split(.$kt)

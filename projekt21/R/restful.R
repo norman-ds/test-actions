@@ -1,13 +1,10 @@
 ## a restful function
-restful <- function(resturl="json.json") {
+restful <- function(
+  resturl = "json.json",  
+  restnames = c('name', 'created', 'url', 'format', 'start_date', 'end_date')
+  ) {
   stopifnot(dir.exists(dirname(resturl)))
   
-  restnames <- c('display_name', 
-                 'created', 
-                 'download_url',
-                 'format',
-                 'start_date',
-                 'end_date')
   
   df <- NULL
   
