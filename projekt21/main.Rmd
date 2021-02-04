@@ -25,7 +25,7 @@ Row {data-height=400}
 Row {data-height=40}
 ---------------------------------------------------
 
-![project21](https://github.com/norman-ds/test-actions/workflows/project21/badge.svg?branch=main)
+![](https://github.com/norman-ds/test-actions/workflows/project21/badge.svg)
 ```{r badge, child='content/badges.Rmd', results='asis'}
 ```
 

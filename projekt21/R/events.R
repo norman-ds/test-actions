@@ -10,7 +10,8 @@ build_events <- function() {
   sourcelast <- eventlog %>%
     group_by(source) %>%
     filter(timestamp == max(timestamp)) %>%
-    ungroup
+    ungroup %>%
+    filter(activity == 'check-in')
     
   # Check if any new check-in
   newevents <- sourcelast %>%
@@ -19,7 +20,8 @@ build_events <- function() {
     group_by(source) %>%
     summarise(available=any(available, na.rm = T),n=n()) %>%
     mutate(validate = if_else(n>1, 'update', 
-                              if_else(available, 'check-in', 'check-out'))) %>%
+                              if_else(available, 'check-in', 'hidden'))) %>%
+    group_by(source, validate) %>%
     mutate(timestamp = writedate(),
            status = "complete",
            resource = "BfS") %>%
@@ -27,8 +29,8 @@ build_events <- function() {
            activity=validate,
            timestamp,
            status,
-           resource) %>%
-    filter(activity=='check-in')
+           resource)  %>%
+    filter(activity != 'update')
 
   # write events
   if(nrow(newstatic) + nrow(newevents) > 0) {
