@@ -1,6 +1,6 @@
 ### Download
 
-Metadatenzugriff [API (JSON)](https://norman-ds.github.io/momo/json.json) 
+Metadatenzugriff [API (JSON)](json) 
 
 ***
 

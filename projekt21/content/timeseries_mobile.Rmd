@@ -1,6 +1,6 @@
 ### Zeitreihe 2000 bis 2020 {.mobile}
 
-```{r graph_mobile, fig.asp=.5}
+```{r graph_mobile}
 # read data with dyfun and convert to timeseries
 source('R/momodyfun.R', local = T)
 dft0 <- dyfun(quos(geo %in% config_all$data$geofilter))  %>%

@@ -23,7 +23,7 @@ build:
 
 restapi:
  path : rest
- restfile : json.json
+ restfile : json
 
 # Static data
 static:

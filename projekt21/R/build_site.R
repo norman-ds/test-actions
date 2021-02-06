@@ -26,8 +26,8 @@ build_site <- function() {
   
   config <- config_all$data$content
   public <- build_config()$tmpdir()
-  public$add('rest/json.json')
-  public$add('events/eventlog.csv')
+  public$add(config_all$filepath('restfile'))
+  public$add(config_all$filepath('eventsfile'))
   build_content(public$path)
   public$dopublic()
 

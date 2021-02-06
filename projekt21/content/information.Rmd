@@ -4,7 +4,7 @@
 
 Todesfälle nach Fünf-Jahres-Altersgruppe, Geschlecht, Woche und Kanton (CSV-Datei) - [opendata.swiss](https://opendata.swiss/de/dataset?q=%22Todesfälle+nach+Fünf-Jahres-Altersgruppe%22+Kanton)
 
->Die Todesfälle werden täglich den Zivilstandsämtern gemeldet und dem BFS im Rahmen der Statistik der natürlichen Bevölkerungsbewegung (BEVNAT) mitgeteilt. Der Melde- und Verarbeitungsprozess braucht Zeit. In der Regel ist nach **neun Tagen** ein genügend grosser Anteil (> 85%) der Todesfälle registriert, so dass die Schätzung der tatsächlichen Zahl der Todesfälle auf einer breiten Datenbasismöglich ist. Beachte [wöchentlicher Nachtrag](#nachtrag) der Kantone.
+>Die Todesfälle werden täglich den Zivilstandsämtern gemeldet und dem BFS im Rahmen der Statistik der natürlichen Bevölkerungsbewegung (BEVNAT) mitgeteilt. Der Melde- und Verarbeitungsprozess braucht Zeit. In der Regel ist nach **neun Tagen** ein genügend grosser Anteil (> 85%) der Todesfälle registriert, so dass die Schätzung der tatsächlichen Zahl der Todesfälle auf einer breiten Datenbasismöglich ist. Beachte [regionale Strukturen](#nachtrag) der Kantone.
 
 
 Die Referenzbevölkerung ist die ständige Wohnbevölkerung, d.h. die Personen mit ständigem Wohnsitz in der Schweiz. Todesfälle von Personen mit Wohnsitz in der Schweiz, die sich im Ausland ereignet haben, werden gezählt.
