@@ -19,6 +19,8 @@ Row {data-height=400}
 
 ```{r timeline, child='content/timeseries.Rmd'}
 ```
+```{r timeline, child='content/timeseries_mobile.Rmd'}
+```
 
 
 Row {data-height=40}
