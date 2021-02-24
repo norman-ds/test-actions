@@ -4,11 +4,11 @@ name: Gold mining
 
 # Controls when the action will run. Triggers the workflow whenever 
 on:
-  push:
-    branches:
-      - main
-  schedule: # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
-    - cron:  '55 3 * * *' # run every day morning at 3:55 am
+#  push:
+#    branches:
+#      - main
+#  schedule: # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
+#    - cron:  '55 3 * * *' # run every day morning at 3:55 am
 
 # Automatically download data whenever 
 # and commits the results to the master branch.
